@@ -1,4 +1,4 @@
-/*Recursion Introduction*\
+/*Tail-Recursion Introduction*\
 
 #include<stdio.h>
 
