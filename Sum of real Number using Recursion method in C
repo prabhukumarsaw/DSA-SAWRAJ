@@ -1,0 +1,24 @@
+Sum of real Number using Recursion method in C
+
+
+
+#include<stdio.h>
+
+
+int sum(int n)
+{
+  if(n==0)
+  return 0;
+  else
+  return sum(n-1)+n;
+}
+
+int main()
+{
+  int r,m;
+  printf("ENter No");
+  scanf("%d",&r);
+  m=sum(r);
+  printf("%d",m);
+  return 0;
+}
