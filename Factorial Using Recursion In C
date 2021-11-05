@@ -1,0 +1,59 @@
+Factorial Using without Recursion In C
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+#include<stdio.h>
+
+int Fact(int n)
+{
+  int i, f=1;
+  if(n==0)
+  return 1;
+  else
+  for(i=1; i<=n; i++)
+  {
+    f=f*i;
+  }
+
+  return f;
+}
+
+int main()
+{
+  int r,m;
+  printf("ENter No");
+  scanf("%d",&r);
+  m=Fact(r);
+  printf("%d",m);
+  return 0;
+}
+
+OUTPUT:- 120
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Factorial Using Recursion In C
+
+#include<stdio.h>
+
+
+int Fact(int n)
+{
+
+  if(n==0)
+  return 1;
+  else
+  return Fact(n-1)*n;
+}
+
+int main()
+{
+  int r,m;
+  printf("ENter No");
+  scanf("%d",&r);
+  m=Fact(r);
+  printf("%d",m);
+  return 0;
+}
+
+
+OUTPUT-  120
