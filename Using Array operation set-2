@@ -1,0 +1,83 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct array
+{
+    int A[20];
+    int size;
+    int length;
+};
+
+int get(struct array arr,int index)
+{
+    if(index>=0 && index<arr.length)
+        return arr.A[index];
+        return -1;
+}
+void set(struct array *arr,int index,int x)
+{
+    if(index>=0 && index<arr->length)
+        arr->A[index]=x;
+
+}
+
+
+int maximum(struct array arr)
+{
+    int max=arr.A[0];
+    for(int i=1;i<arr.length;i++)
+    {
+        if(arr.A[i]>max)
+            max=arr.A[i];
+    }
+    return max;
+}
+
+int minimum(struct array arr)
+{
+    int min=arr.A[0];
+    for(int i=1;i<arr.length;i++)
+    {
+        if(arr.A[i]<min)
+            min=arr.A[i];
+    }
+    return min;
+}
+
+int Sum(struct array arr)
+{
+    int s=0;
+    for(int i=0;i<arr.length;i++)
+    {
+        s=s+arr.A[i];
+
+    }
+    return s;
+}
+
+float Avg(struct array arr)
+{
+    return (float)Sum(arr)/arr.length;
+}
+
+void Display(struct array arr)
+{
+    for(int i=0;i<arr.length;i++)
+    {
+        printf("%d\t",arr.A[i]);
+    }
+
+}
+
+int main()
+{
+    struct array arr={{8,5,7,1,4,9},20,6};
+    printf("Hello world!\n");
+    set(&arr,0,19);
+    Display(arr);
+    printf("\nGet=%d:\n",get(arr,4));
+    printf("\nMax=%d:\n",maximum(arr));
+    printf("Min=%d:\n",minimum(arr));
+    printf("Sum=%d:\n",Sum(arr));
+    printf("Avg=%f:\n",Avg(arr));
+    return 0;
+}
