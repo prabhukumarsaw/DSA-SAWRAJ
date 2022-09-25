@@ -1,0 +1,58 @@
+/*
+
+Given an integer array, find a pair with the maximum product in it.
+
+Each input can have multiple solutions. The output should match with either one of them.
+
+Input : [-10, -3, 5, 6, -2]
+Output: (-10, -3) or (-3, -10) or (5, 6) or (6, 5)
+
+Input : [-4, 3, 2, 7, -5]
+Output: (3, 7) or (7, 3)
+
+If no pair exists, the solution should return the pair (-1, -1).
+
+Input : [1]
+Output: (-1, -1)
+
+*/
+
+/*
+
+Given a binary array containing 0’s and 1’s, find the largest contiguous
+subarray with equal numbers of 0’s and 1’s.
+
+Input : [0, 0, 1, 0, 1, 0, 0]
+Output: [0, 1, 0, 1] or [1, 0, 1, 0]
+
+Input : [0, 0, 0, 0]
+Output: []
+
+Note: Since an input can contain several largest subarrays with equal numbers of
+0’s and 1’s, the code should return any one of them.
+
+*/
+//Using 2-pointer rule
+
+#include <iostream>
+using namespace std;
+
+int Sol(int arr[], int n) {
+  int cal = 0;
+  int res = 1;
+  for (int i = 0; i < n; i++) {
+    for (int j = i+1; j < n; j++) {
+      res = arr[j]* arr[i];
+      cal = max(cal, res);
+    }
+  }
+  return cal;
+}
+
+int main() {
+
+  int arr[] = {1};
+  int n = sizeof(arr) / sizeof(arr[0]);
+
+  cout << "Result:: " << Sol(arr, n);
+}
